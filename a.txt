@@ -1,0 +1,68 @@
+<div class="row">
+                    <div class="m-4 col-md-6 col-lg-3 col-xl-3">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1662560884429-ab43eb250446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+                                class="card-img-top" alt="Sample Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Alice Liddel</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.
+                                    She is
+                                    specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
+                                <a href="#" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-4 col-md-6 col-lg-3 col-xl-3">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1662560884429-ab43eb250446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+                                class="card-img-top" alt="Sample Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Alice Liddel</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.
+                                    She is
+                                    specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
+                                <a href="#" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-4 col-md-6 col-lg-3 col-xl-3">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1662560884429-ab43eb250446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+                                class="card-img-top" alt="Sample Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Alice Liddel</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.
+                                    She is
+                                    specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
+                                <a href="#" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-4 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1662560884429-ab43eb250446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+                                class="card-img-top" alt="Sample Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Alice Liddel</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.
+                                    She is
+                                    specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
+                                <a href="#" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-4 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1662560884429-ab43eb250446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+                                class="card-img-top" alt="Sample Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Alice Liddel</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.
+                                    She is
+                                    specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
+                                <a href="#" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
