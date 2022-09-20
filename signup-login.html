@@ -154,6 +154,8 @@
             <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required
                 autofocus="" />
 
+            <label for="event-brochure">Event Brochure:</label>
+            <input type="file" id="event-brochure" name="event-brochure">
 
             <button class="btn btn-primary btn-block btn-danger" type="reset">
                 <i class="fas fa-eraser"></i> Reset
@@ -167,6 +169,7 @@
 
         </form>
     </div>
+    
 
     <!-- scripts  -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -181,7 +184,29 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="js/signup-login.js"></script>
+    <script>
+        // toggleResetPswd script 
+        function toggleResetPswd(e) {
+            e.preventDefault();
+            $("#logreg-forms .form-signin").toggle(); // display:block or none
+            $("#logreg-forms .form-reset").toggle(); // display:block or none
+        }
+
+        // toggleSignUp script 
+        function toggleSignUp(e) {
+            e.preventDefault();
+            $("#logreg-forms .form-signin").toggle(); // display:block or none
+            $("#logreg-forms .form-signup").toggle(); // display:block or none
+        }
+
+        $(() => {
+            // Login Register Form
+            $("#logreg-forms #forgot_pswd").click(toggleResetPswd);
+            $("#logreg-forms #cancel_reset").click(toggleResetPswd);
+            $("#logreg-forms #btn-signup").click(toggleSignUp);
+            $("#logreg-forms #cancel_signup").click(toggleSignUp);
+        });
+    </script>
 
 </body>
 
