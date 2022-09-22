@@ -94,10 +94,12 @@
                     dicta labore, provident magnam voluptates accusantium ratione consectetur optio nisi quae
                     cupiditate. Neque fugit, incidunt minima eaque impedit, corrupti natus quibusdam, dolores et nam
                     placeat. Eos, temporibus fugiat?</p>
-                <a href="#" type="button" class="btn btn-primary">Event Brochure</a>
-                <a href="#" id="edit-event" type="button" class="btn btn-primary">Edit Event Details</a>
-                <a href="#" id="p-list-btn" type="button" class="btn btn-primary">Participant List</a>
-                <a href="#" id="l-p-list-btn" type="button" class="btn btn-primary">Live Participant List</a>
+                <div id="btn">
+                    <a style="margin: 10px;" href="#" type="button" class="btn btn-primary">Event Brochure</a>
+                    <a style="margin: 10px;" href="#" id="edit-event" type="button" class="btn btn-primary">Edit Event Details</a>
+                    <a style="margin: 10px;" href="#" id="p-list-btn" type="button" class="btn btn-primary">Participant List</a>
+                    <a style="margin: 10px;" href="#" id="l-p-list-btn" type="button" class="btn btn-primary">Live Participant List</a>
+                </div>
             </div>
         </div>
 
@@ -108,49 +110,50 @@
                 <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
                     Edit Event Details
                 </h1>
-    
-                <input type="text" id="event-name" class="form-control" placeholder="Event Name" required="" autofocus="" />
-    
+
+                <input type="text" id="event-name" class="form-control" placeholder="Event Name" required=""
+                    autofocus="" />
+
                 <input type="text" id="event-organizer" class="form-control" placeholder="Event Organizer" required=""
                     autofocus="" />
-    
+
                 <label for="event-start-date">Event Start Date :</label>
                 <input type="date" id="event-start-date" class="form-control" required="" autofocus="" />
-    
+
                 <label for="event-start-time">Event Start Time :</label>
                 <input type="time" id="event-start-time" class="form-control" required="" autofocus="" />
-    
+
                 <label for="event-end-date">Event End Date :</label>
                 <input type="date" id="event-end-date" class="form-control" required="" autofocus="" />
-    
+
                 <label for="event-end-time">Event End Time :</label>
                 <input type="time" id="event-end-duration" class="form-control" required="" autofocus="" />
-    
+
                 <label for="event-description">Event Description :</label>
                 <textarea class="form-control" id="event-description" rows="3">Event Description ...</textarea>
-    
+
                 <input type="text" id="event-venue" class="form-control" placeholder="Event Venue" required=""
                     autofocus="" />
-    
+
                 <label for="event-brochure">Event Brochure:</label>
                 <input type="file" id="event-brochure" name="event-brochure">
 
                 <label for="Carousel-image">Carousel image: (3, 1460x620 images)</label>
-                <input type="file" accept="image/*"  multiple id="corousel-image" name="corousel-image">
-    
+                <input type="file" accept="image/*" multiple id="corousel-image" name="corousel-image">
+
                 <button class="btn btn-primary btn-block btn-danger" type="reset">
                     <i class="fas fa-eraser"></i> Reset
                 </button>
-    
+
                 <button class="btn btn-primary btn-block" type="submit">
                     <i class="fas fa-user-plus"></i> Save
                 </button>
 
                 <a href="#" id="back-1"><i class="fas fa-angle-left"></i> Back</a>
-    
+
             </form>
         </div>
-        
+
 
         <!-- participant-list -->
         <div id="participant-list" class="participant-list">
@@ -263,37 +266,37 @@
         function toggleplist(e) {
             e.preventDefault();
             $("#event-details").toggle();
-            $("#participant-list").toggle(); 
+            $("#participant-list").toggle();
         }
 
         function togglelplist(e) {
             e.preventDefault();
             $("#event-details").toggle();
-            $("#live-participant-list").toggle(); 
+            $("#live-participant-list").toggle();
         }
 
         function editevent(e) {
             e.preventDefault();
             $("#event-details").toggle();
-            $("#logreg-forms .form-signup").toggle(); 
+            $("#logreg-forms .form-signup").toggle();
         }
 
         function back1(e) {
             e.preventDefault();
-            $("#event-details").toggle(); 
-            $("#logreg-forms .form-signup").toggle(); 
+            $("#event-details").toggle();
+            $("#logreg-forms .form-signup").toggle();
         }
 
         function back2(e) {
             e.preventDefault();
-            $("#event-details").toggle(); 
-            $("#participant-list").toggle(); 
+            $("#event-details").toggle();
+            $("#participant-list").toggle();
         }
 
         function back3(e) {
             e.preventDefault();
-            $("#event-details").toggle(); 
-            $("#live-participant-list").toggle(); 
+            $("#event-details").toggle();
+            $("#live-participant-list").toggle();
         }
 
         $(() => {
@@ -304,7 +307,7 @@
             $("#back-1").click(back1);
             $("#back-2").click(back2);
             $("#back-3").click(back3);
-            
+
         });
     </script>
 </body>
