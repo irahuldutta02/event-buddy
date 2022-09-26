@@ -10,6 +10,6 @@ Scan this QR code to see the Development Timeline :
 
 Contributors
 
-<a href = "https://github.com/rdtech2002/event-buddy-university-project-01">
-  <img src = "https://contrib.rocks/image?repo=rdtech2002/event-buddy-university-project-01"/>
+<a href="https://github.com/rdtech2002/event-buddy-university-project-01/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=rdtech2002/event-buddy-university-project-01" />
 </a>
