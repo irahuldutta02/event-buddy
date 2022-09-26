@@ -10,6 +10,6 @@ Scan this QR code to see the Development Timeline :
 
 Contributors
 
-<a href="https://github.com/irahuldutta/event-buddy-university-project-01/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=irahuldutta/event-buddy-university-project-01" />
+<a href="https://github.com/irahuldutta02/event-buddy-university-project-01/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=irahuldutta02/event-buddy-university-project-01" />
 </a>
