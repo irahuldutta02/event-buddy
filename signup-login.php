@@ -108,7 +108,7 @@ include "db_conn.php";
                 <i class="fas fa-user-plus"></i> Create New Event
             </button>
 
-            <a href="index.html"><i class="fas fa-angle-left"></i> Cancel</a>
+            <a href="index.php"><i class="fas fa-angle-left"></i> Cancel</a>
 
         </form>
         <!-- signin php -->
@@ -129,8 +129,13 @@ include "db_conn.php";
             $a_mail = validate($_POST['a_mail']);
 
             if (empty($event_id)) {
+                // header("Location: signup-login.php?error=event id is required");
+                exit();
+
             } elseif (empty($a_mail)) {
+                exit();
             } elseif (empty($a_password)) {
+                exit();
             } else {
                 $sql = "SELECT * FROM admins WHERE event_id='$event_id' AND a_mail='$a_mail' AND a_password='$a_password'";
                 $result = $conn->query($sql);
@@ -419,6 +424,7 @@ include "db_conn.php";
 
             //admin name
             if (empty($_POST["a_name"])) {
+                exit();
             } else {
                 $a_name = test_input($_POST["a_name"]);
                 // $_SESSION["a_name"] = $a_name;
@@ -430,6 +436,7 @@ include "db_conn.php";
 
             //admin mail
             if (empty($_POST["a_mail"])) {
+                exit();
             } else {
                 $a_mail = test_input($_POST["a_mail"]);
                 // $_SESSION["a_mail"] = $a_mail;
@@ -441,6 +448,7 @@ include "db_conn.php";
 
             // admin password
             if (empty($_POST["a_password"])) {
+                exit();
             } else {
                 $a_password = test_input($_POST["a_password"]);
                 //   $_SESSION["event_id"]= $event_id;
@@ -448,6 +456,7 @@ include "db_conn.php";
             }
             //event name
             if (empty($_POST["event_name"])) {
+                exit();
             } else {
                 $event_name = test_input($_POST["event_name"]);
                 // $_SESSION["event_name"] = $event_name;
@@ -457,27 +466,32 @@ include "db_conn.php";
 
                 //event start date
                 if (empty($_POST["event_sdate"])) {
+                    exit();
                 } else {
                     $event_sdate = test_input($_POST["event_sdate"]);
                 }
                 //event start time
                 if (empty($_POST["event_stime"])) {
+                    exit();
                 } else {
                     $event_stime = test_input($_POST["event_stime"]);
                 }
                 //event end date
                 if (empty($_POST["event_edate"])) {
+                    exit();
                 } else
                     $event_edate = test_input($_POST["event_edate"]);
             }
             //event end time
             if (empty($_POST["event_etime"])) {
+                exit();
             } else {
                 $event_etime = test_input($_POST["event_etime"]);
             }
 
             //event venue
             if (empty($_POST["event_venue"])) {
+                exit();
             } else {
                 $event_venue = test_input($_POST["event_venue"]);
             }
@@ -485,17 +499,20 @@ include "db_conn.php";
 
             //event organizer
             if (empty($_POST["organizer"])) {
+                exit();
             } else {
                 $organizer = test_input($_POST["organizer"]);
             }
             //event description
             if (empty($_POST["event_desc"])) {
+                exit();
             } else {
                 $event_desc = test_input($_POST["event_desc"]);
             }
 
             //event brochure
             if (empty($_POST["event_broc"])) {
+                exit();
             } else {
                 $event_broc = test_input($_POST["event_broc"]);
                 // $pdf=$_FILES['pdf']['name'];
@@ -509,6 +526,7 @@ include "db_conn.php";
 
             //event carousel
             if (empty($_POST["event_caro"])) {
+                exit();
             } else {
                 $event_caro = test_input($_POST["event_broc"]);
                 // $_SESSION["event_id"]= $event_id;
