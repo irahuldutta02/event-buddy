@@ -108,7 +108,7 @@ include "db_conn.php";
                 <i class="fas fa-user-plus"></i> Create New Event
             </button>
 
-            <a href="index.html"><i class="fas fa-angle-left"></i> Cancel</a>
+            <a href="index.php"><i class="fas fa-angle-left"></i> Cancel</a>
 
         </form>
         <!-- signin php -->
