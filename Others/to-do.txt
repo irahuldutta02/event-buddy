@@ -2,3 +2,5 @@
 2. brochure input (only one image or pdf is allowed)
 3. show the coursole
 4. show the brochure
+5. forgot password
+6. save password as hash
