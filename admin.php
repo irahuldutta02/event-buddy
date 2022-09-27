@@ -2,6 +2,15 @@
 session_start();
 include "db_conn.php";
 ?>
+<?php
+    /* at the top of 'check.php' */
+    if(isset($_SESSION['event_id']) &&  isset($_SESSION['a_mail'])){
+        // redirect them to your desired location
+       
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -363,3 +372,12 @@ include "db_conn.php";
 </body>
 
 </html>
+
+
+<?php
+}else{
+    header("Location: signup-login.php");
+    exit();
+        // echo "hi";
+}
+?>
