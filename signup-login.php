@@ -264,7 +264,7 @@ include "db_conn.php";
             <input type="file" accept="application/pdf" id="event-brochure" name="event_broc">
 
             <label for="Carousel-image">Carousel image: (3, 1460x620 images)</label>
-            <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro">
+            <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
 
             <button class="btn btn-primary btn-block btn-danger" type="reset">
                 <i class="fas fa-eraser"></i> Reset
@@ -528,6 +528,9 @@ include "db_conn.php";
             if (empty($_POST["event_caro"])) {
                 exit();
             } else {
+                // $image=$_FILES['event_caro']['name'];
+                // $path='images/'.$image;
+
                 $event_caro = test_input($_POST["event_broc"]);
                 // $_SESSION["event_id"]= $event_id;
 
