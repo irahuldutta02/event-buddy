@@ -10,7 +10,7 @@
           while($row = $result->fetch_assoc()) {
             $event_ids[$i]=$row["event_id"];
 
-        ?><div class="card" style="width: 300px;">
+?>          <div class="card" style="width: 300px;">
                 <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80"
                     class="card-img-top" alt="Sample Image">
                 <div class="card-body text-center">

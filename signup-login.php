@@ -144,7 +144,7 @@ include "db_conn.php";
                     if ($row['event_id'] === $event_id && $row['a_mail'] === $a_mail && $row['a_password']) {
                         $_SESSION['event_id'] = $row['event_id'];
                         $_SESSION['a_mail'] = $row['a_mail'];
-                        $_SESSION['a_password'] = $row['a_password'];
+                        // $_SESSION['a_password'] = $row['a_password'];
 
                         $_SESSION['event_name'] = $row['event_name'];
 

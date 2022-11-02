@@ -5,6 +5,8 @@ include "db_conn.php";
 
 
 <?php 
+
+    if(isset($_SESSION['event_id'])){
         //   $hi=$_SESSION['event_ids'];
         //   $sql = "SELECT * FROM admins WHERE event_id = '$hi'";
         //   $result = $conn->query($sql);
@@ -15,19 +17,10 @@ include "db_conn.php";
         //   while($row = $result->fetch_assoc()) {
          
 
-            
-          $i=$_SESSION["i"];
-
-          if ($_SESSION["i"] > 0) {
-
+         
           
         //   while($i>=1) 
-          for(;$i>=1; $i--){
-            $temp=$_SESSION['event_ids'][$i];
-            $sql = "SELECT * FROM admins WHERE event_id = $temp";
-            $result = $conn->query($sql);
-            while($row = $result->fetch_assoc()) {
-                // echo $row['event_id'];d
+         
                 
             
             
@@ -189,12 +182,14 @@ include "db_conn.php";
 
 <?php
        
-            }
+            
            
-        }
+        
          
-          } else {
-              echo "0 results";
-          }
+    }else{
+        header("Location: signup-login.php");
+        exit();
+            // echo "hi";
+    }
             
             ?>
