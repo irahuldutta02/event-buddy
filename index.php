@@ -1,5 +1,7 @@
 <?php
+clearstatcache();
 session_start();
+
 include "db_conn.php";
 ?>
 <!DOCTYPE html>
