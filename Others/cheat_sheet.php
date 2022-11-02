@@ -297,7 +297,7 @@ function printFormatted($str, $format) {
 // The try...catch Statement
 try {
     // code that can throw exceptions
-  } catch(Exception $e) {
+} catch(Exception $e) {
     // code that runs when an exception is caught
   }
 
@@ -308,7 +308,7 @@ try {
   // PHP Connect to MySQL
 
   // Open a Connection to MySQL
-  $servername = "localhost";
+$servername = "localhost";
 $username = "username";
 $password = "password";
 // Create connection
