@@ -9,6 +9,7 @@
     flex-direction: row;
     justify-content: space-around;
     flex-flow: wrap;
+    margin-top: 20px;
   }
   
   .card {
@@ -21,10 +22,12 @@
   
   .card-header {
     text-align: center;
-    color: #fff;
+    /* border: 2px solid red; */
+    /* color: #fff; */
     height: 250px;
     width: 100%;
     padding: 5px;
+    margin-top: 7px;
   }
   
   .card-header .img{

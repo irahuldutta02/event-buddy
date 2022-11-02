@@ -61,10 +61,10 @@ include "db_conn.php";
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <a href="index.php" class="nav-item nav-link active">Home</a>
-                    <a href="index.php#events-section" class="nav-item nav-link">Events</a>
+                    <a href="index.php#events-section" class="nav-item active nav-link">Events</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="signup-login.php" class="nav-item nav-link">Login / Create an Event</a>
+                    <a href="signup-login.php" class="nav-item active nav-link">Login / Create an Event</a>
                 </div>
             </div>
         </div>
