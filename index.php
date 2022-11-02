@@ -59,46 +59,10 @@ include "db_conn.php";
             </div>
         </div>
 
-        <!-- <script>
-            function myAjax() {
-                $.ajax({
-                    type: "POST",
-                    url: 'event.php',
-                    data: {
-                        action: 'call_this'
-                    },
-                    success: function(html) {
-                        alert(html);
-                    }
-
-                });
-            }
-        </script> -->
-
-       <script>
-         function getAdmin($event_id){
-            <?php 
-                  $sql = "SELECT * FROM admins ORDER BY event_sdate";
-                  $result = $conn->query($sql);
-                  if ($result->num_rows > 0) {
-                    // output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        
-                    }
-                } else {
-                    echo "0 results";
-                }
-            
-            ?>
-         }
-       </script>
-        <?php
 
 
-        
 
 
-        ?>
         <!-- events-section -->
         <div id="events-section">
             <div class="content">
@@ -113,17 +77,22 @@ include "db_conn.php";
                     </form>
                 </div>
 
+
+
+
                 <!-- card  -->
                 <div class="card-div row">
                     <?php
+
                     $sql = "SELECT * FROM admins ORDER BY event_sdate";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
-                            $_POST['event_id'] = $row['event_id'];
+                            // $_POST['events_id'] = $row['event_id'];
 
                     ?>
+
 
                             <div class="card">
                                 <div class="card-header">
@@ -138,12 +107,12 @@ include "db_conn.php";
                                         <p><span>START DATE : </span>[<?php echo $row['event_sdate']; ?>]</p>
                                         <p><span>START TIME : </span> [<?php echo $row['event_stime']; ?>] </p>
                                         <P><span>SLOTS : </span>UNLIMITED</P>
-                                        <!-- <a href=""  class="btn">REGISTER
+                                        <a href= "event.php?event_id=<?php echo $row['event_id']?>" class="btn">REGISTER
 
-                                        </a> -->
-                                       
+                                        </a>
 
-                                            <button class="btn" name="eventbtn">REGISTER</button>
+
+                                        <!-- <button class="btn" name="eventbtn">REGISTER</button> -->
                                         </form>
                                     </div>
                                 </div>
@@ -155,6 +124,7 @@ include "db_conn.php";
                         echo "0 results";
                     }
                     ?>
+
 
                     <!-- <div class="card">
                         <div class="card-header">

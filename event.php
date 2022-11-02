@@ -4,6 +4,31 @@ include "db_conn.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+$event_id =$_GET['event_id'];
+// $events_id =$_POST['events_id'];
+
+$sql = "SELECT event_id,event_name, organizer, event_sdate, event_stime, event_edate, event_etime, event_venue, event_desc, event_broc  FROM admins WHERE event_id='{$event_id}'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+     
+ 
+
+// event name
+// event organizer
+// Start Date & time
+// End Date & time 
+// Venue 
+// Event Description
+// Event Description :
+// Event Brochure
+
+
+?>
 
 <head>
     <meta charset="utf-8">
@@ -58,8 +83,8 @@ include "db_conn.php";
 
 
                 <div class="container-lg my-3">
-                    <h1>event name</h1>
-                    <p class="lead">event organizer
+                    <h1><?php   echo $row['event_name'];?></h1>
+                    <p class="lead"><?php   echo $row['organizer'];?>
                     <p>
 
 
@@ -96,15 +121,11 @@ include "db_conn.php";
                     </div>
                 </div>
 
-                <p class="card-date-time"> <b>Start Date & time :</b> [20/12/2022] [10.00 am] </p>
-                <p class="card-date-time"><b>End Date & time :</b> [21/12/2022] [03.00 pm] </p>
-                <p class="card-Venue"><b>Venue :</b> University Ground</p>
+                <p class="card-date-time"> <b>Start Date & time :</b> [<?php echo $row['event_sdate'];?>] [<?php   echo $row['event_stime'];?>] </p>
+                <p class="card-date-time"><b>End Date & time :</b> [<?php echo $row['event_edate'];?>] [<?php   echo $row['event_etime'];?>] </p>
+                <p class="card-Venue"><b>Venue :</b> <?php   echo $row['event_venue'];?></p>
                 <p class="card-event-description-title"><b>Event Description :</b></p>
-                <p class="card-event-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur
-                    quasi molestiae quos in asperiores earum, quod odio architecto enim, magni libero reprehenderit
-                    dicta labore, provident magnam voluptates accusantium ratione consectetur optio nisi quae
-                    cupiditate. Neque fugit, incidunt minima eaque impedit, corrupti natus quibusdam, dolores et nam
-                    placeat. Eos, temporibus fugiat?</p>
+                <p class="card-event-description"><?php   echo $row['event_desc'];?></p>
                 <a href="#" type="button" class="btn btn-primary">Event Brochure</a>
 
                 <!-- event-registration-form  -->
@@ -146,4 +167,12 @@ include "db_conn.php";
 </body>
 
 </html>
+
+
 <?php
+
+}
+} else {
+  echo "0 results";
+}
+?>

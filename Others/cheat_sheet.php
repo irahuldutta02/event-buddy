@@ -456,6 +456,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+//Where 
 $sql = "SELECT id, firstname, lastname FROM MyGuests WHERE lastname='Doe'";
 $result = $conn->query($sql);
 
