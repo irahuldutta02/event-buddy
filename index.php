@@ -21,6 +21,7 @@ include "db_conn.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/card.css">
 
 </head>
 
@@ -36,10 +37,10 @@ include "db_conn.php";
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <a href="index.php" class="nav-item nav-link active">Home</a>
-                    <a href="index.php#events-section" class="nav-item nav-link">Events</a>
+                    <a href="index.php#events-section" class="nav-item active nav-link">Events</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="signup-login.php" class="nav-item nav-link">Login / Creat an Event</a>
+                    <a href="signup-login.php" class="nav-item active nav-link">Login / Creat an Event</a>
                 </div>
             </div>
         </div>
@@ -60,109 +61,84 @@ include "db_conn.php";
 
         <!-- events-section -->
         <div id="events-section">
+            <div class="content">
+
             <div id="events-section-heading">
                 <h3>Register for Upcoming Events</h3>
             </div>
 
-        <?php 
-          
-          $sql = "SELECT * FROM admins ORDER BY event_sdate";
-          $result = $conn->query($sql);
-        
-          
-        $event_ids = array();
+            <!-- card  -->
+            <div class="row">
 
-        $i=$result->num_rows; 
-        // echo "$result->num_rows";
-        $_SESSION["i"]=$i;
-        
+                <div class="card">
+                    <div class="card-header">
+                        <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);"
+                            class="img">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-detais">
+                            <h3>EVENT NAME</h3>
+                            <p><span>BY : </span>MAKAUT</p>
+                            <p><span>VENUE : </span>MAKAUT GROUND</p>
+                            <p><span>START DATE : </span>20/12/2022</p>
+                            <p><span>START TIME : </span>10:00 am</p>
+                            <P><span>SLOTS : </span>UNLIMITED</P>
+                            <a href="#" class="btn">REGISTER</a>
+                        </div>
+                    </div>
+                </div>
 
-          if ($result->num_rows > 0) {
-         
-          // output data of each row
-          while($row = $result->fetch_assoc()) {
-            $event_ids[$i]=$row["event_id"];
+                <div class="card">
+                    <div class="card-header">
+                        <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);"
+                            class="img">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-detais">
+                            <h3>EVENT NAME</h3>
+                            <p><span>BY : </span>MAKAUT</p>
+                            <p><span>VENUE : </span>MAKAUT GROUND</p>
+                            <p><span>START DATE : </span>20/12/2022</p>
+                            <p><span>START TIME : </span>10:00 am</p>
+                            <P><span>SLOTS : </span>UNLIMITED</P>
+                            <a href="#" class="btn">REGISTER</a>
+                        </div>
+                    </div>
+                </div>
 
-        ?><div class="card" style="width: 300px;">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80" class="card-img-top" alt="Sample Image">
-                <div class="card-body text-center">
-                    <h5 class="card-title"> <?php echo $row["event_name"]?> </h5>
-                    <p class="card-Organiser"> <?php echo $row["organizer"]?></p>
-                    <p class="card-date-time">Start Date & time : [<?php echo $row['event_sdate']; ?>] [<?php echo $row['event_stime']; ?>] </p>
-                    <p class="card-date-time">End Date & time : [<?php echo $row['event_edate']; ?>] [<?php echo $row['event_etime']; ?>] </p>
-                    <p class="card-Venue">Venue :  <?php echo $row["event_venue"]?></p>
-                    <a href="event.php" type="button" class="btn btn-primary">Register</a>
+                <div class="card">
+                    <div class="card-header">
+                        <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);"
+                            class="img">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-detais">
+                            <h3>EVENT NAME</h3>
+                            <p><span>BY : </span>MAKAUT</p>
+                            <p><span>VENUE : </span>MAKAUT GROUND</p>
+                            <p><span>START DATE : </span>20/12/2022</p>
+                            <p><span>START TIME : </span>10:00 am</p>
+                            <P><span>SLOTS : </span>UNLIMITED</P>
+                            <a href="#" class="btn">REGISTER</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-          
-            <?php
-        $i--;  
-        }
-        $_SESSION["event_ids"]= $event_ids;
-          } else {
-              echo "0 results";
-          }
-           
-
-            
-            ?>
-            
-
-
-
-
-
-
-
-
-
-            <!-- <div class="card" style="width: 300px;">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80" class="card-img-top" alt="Sample Image">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Event Name</h5>
-                    <p class="card-Organiser">[Maulana Abul Klam Azad University Of Technology, West Bengal] </p>
-                    <p class="card-date-time">Start Date & time : [20/12/2022] [10.00 am] </p>
-                    <p class="card-date-time">End Date & time : [21/12/2022] [03.00 pm] </p>
-                    <p class="card-Venue">Venue : University  Ground</p>
-                    <a href="event.html" type="button" class="btn btn-primary">Register</a>
-                </div>
-            </div> -->
-
-            <!-- <div class="card" style="width: 300px;">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80" class="card-img-top" alt="Sample Image">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Event Name</h5>
-                    <p class="card-Organiser">[Maulana Abul Klam Azad University Of Technology, West Bengal] </p>
-                    <p class="card-date-time">Start Date & time : [20/12/2022] [10.00 am] </p>
-                    <p class="card-date-time">End Date & time : [21/12/2022] [03.00 pm] </p>
-                    <p class="card-Venue">Venue : University  Ground</p>
-                    <a href="event.html" type="button" class="btn btn-primary">Register</a>
-                </div>
-            </div> -->
-
-            <!-- <div class="card" style="width: 300px;">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80" class="card-img-top" alt="Sample Image">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Event Name</h5>
-                    <p class="card-Organiser">[Maulana Abul Klam Azad University Of Technology, West Bengal] </p>
-                    <p class="card-date-time">Start Date & time : [20/12/2022] [10.00 am] </p>
-                    <p class="card-date-time">End Date & time : [21/12/2022] [03.00 pm] </p>
-                    <p class="card-Venue">Venue : University  Ground</p>
-                    <a href="event.html" type="button" class="btn btn-primary">Register</a>
-                </div>
-            </div> -->
-
         </div>
 
 
         <!-- footer  -->
         <footer>
             <div class="footer-content">
-                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i class="bi bi-github"></i></a>
+                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i
+                        class="bi bi-github"></i></a>
                 <p>Copyright © 2022 Event Buddy</p>
             </div>
         </footer>
     </div>
 </body>
-        
+
 </html>
