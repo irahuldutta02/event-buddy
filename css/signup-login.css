@@ -4,13 +4,12 @@
   box-sizing: border-box;
 }
 
-body{
-  background-image: url(https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);
-  background-repeat: no-repeat;
+body {
+  background-color: wheat;
 }
 
 /* navbar  */
-.navbar{
+.navbar {
   min-width: 320px;
 }
 
@@ -37,17 +36,13 @@ body{
   font-size: 16px;
 }
 
-
-.error{
-  background: #F2DEDE;
-  color: #A94442;
+.error {
+  background: #f2dede;
+  color: #a94442;
   padding: 10px;
   width: 95%;
   margin: 20px auto;
-
-
 }
-
 
 #logreg-forms .form-control:focus {
   z-index: 2;
