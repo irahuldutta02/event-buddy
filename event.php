@@ -2,41 +2,13 @@
 session_start();
 include "db_conn.php";
 ?>
-
-
-<?php 
-
-    if(isset($_SESSION['event_id'])){
-        //   $hi=$_SESSION['event_ids'];
-        //   $sql = "SELECT * FROM admins WHERE event_id = '$hi'";
-        //   $result = $conn->query($sql);
-
-        //   if ($result->num_rows > 0) {
-
-        //   // output data of each row
-        //   while($row = $result->fetch_assoc()) {
-         
-
-         
-          
-        //   while($i>=1) 
-         
-                
-            
-            
-         
-
-      ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $row["event_name"]?></title>
+    <title>event name</title>
 
     <link rel="icon" type="image/x-icon" href="assets/logo/eb-transperent-logo.png" />
 
@@ -77,17 +49,17 @@ include "db_conn.php";
             <div class="home-heading-content">
 
 
-            <!-- <div class="container-lg my-3">
+                <!-- <div class="container-lg my-3">
                     <h1>Event Name</h1>
                     <p class="lead">MAULANA ABUL KALAM AZAD UNIVERSITY OF TECHNOLOGY, WEST BENGAL
                     <p> -->
 
-        
 
-               
+
+
                 <div class="container-lg my-3">
-                    <h1><?php echo $row["event_name"]?></h1>
-                    <p class="lead"><?php echo $row["organizer"]?>
+                    <h1>event name</h1>
+                    <p class="lead">event organizer
                     <p>
 
 
@@ -104,16 +76,13 @@ include "db_conn.php";
                         <!-- Wrapper for carousel items -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                    class="d-block w-100" alt="Slide 1">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                    class="d-block w-100" alt="Slide 2">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                    class="d-block w-100" alt="Slide 3">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 3">
                             </div>
                         </div>
 
@@ -144,7 +113,7 @@ include "db_conn.php";
                         <h5 class="modal-title">Register for the Event</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body">                        
+                    <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">Name</label>
                             <input type="text" class="form-control">
@@ -152,15 +121,15 @@ include "db_conn.php";
                         <div class="mb-3">
                             <label class="form-label">Email:</label>
                             <input type="email" class="form-control">
-                        </div>                      
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                 </form>
-                        
-                    
+
+
             </div>
 
         </div>
@@ -168,8 +137,7 @@ include "db_conn.php";
         <!-- footer  -->
         <footer>
             <div class="footer-content">
-                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i
-                        class="bi bi-github"></i></a>
+                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i class="bi bi-github"></i></a>
                 <p>Copyright © 2022 Event Buddy</p>
             </div>
         </footer>
@@ -178,18 +146,4 @@ include "db_conn.php";
 </body>
 
 </html>
-
-
 <?php
-       
-            
-           
-        
-         
-    }else{
-        header("Location: signup-login.php");
-        exit();
-            // echo "hi";
-    }
-            
-            ?>

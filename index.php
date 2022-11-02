@@ -59,45 +59,45 @@ include "db_conn.php";
             </div>
         </div>
 
-        <script>
-            // function myAjax() {
-            //     $.ajax({
-            //         type: "SESSION",
-            //         url: 'admin.php',
-            //         data: {
-            //             action: 'call_this'
-            //         },
-            //         success: function(html) {
-            //             alert(html);
-            //         }
+        <!-- <script>
+            function myAjax() {
+                $.ajax({
+                    type: "POST",
+                    url: 'event.php',
+                    data: {
+                        action: 'call_this'
+                    },
+                    success: function(html) {
+                        alert(html);
+                    }
 
-            //     });
-            // }
-        </script>
+                });
+            }
+        </script> -->
+
+       <script>
+         function getAdmin($event_id){
+            <?php 
+                  $sql = "SELECT * FROM admins ORDER BY event_sdate";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        
+                    }
+                } else {
+                    echo "0 results";
+                }
+            
+            ?>
+         }
+       </script>
         <?php
 
 
-        function getAdmin($eventId)
-        {
-            include "db_conn.php";
-            $sql = "SELECT event_id FROM admins ORDER BY event_sdate";
-            $resultAdmin = $conn->query($sql);
-            if ($resultAdmin->num_rows > 0) {
-                // output data of each row
-                while ($row = $resultAdmin->fetch_assoc()) {
-                    // $_SESSION['event_id'] = $row['event_id'];
-                    if($row['event_id']== $eventId){
-                        $_SESSION['event_id'] = $row['event_id'];
-                        $_SESSION['a_mail'] = $row['a_mail'];
-                        header('Location: admin.php');
-                    }
-                }
-            } else {
-                echo "0 results";
-            }
-        }
-
         
+
+
         ?>
         <!-- events-section -->
         <div id="events-section">
@@ -121,7 +121,7 @@ include "db_conn.php";
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
-                            $_SESSION['event_id'] = $row['event_id'];
+                            $_POST['event_id'] = $row['event_id'];
 
                     ?>
 
@@ -138,9 +138,13 @@ include "db_conn.php";
                                         <p><span>START DATE : </span>[<?php echo $row['event_sdate']; ?>]</p>
                                         <p><span>START TIME : </span> [<?php echo $row['event_stime']; ?>] </p>
                                         <P><span>SLOTS : </span>UNLIMITED</P>
-                                        <a href="admin.php?event_id=true" class="btn" >REGISTER
+                                        <!-- <a href=""  class="btn">REGISTER
 
-                                        </a>
+                                        </a> -->
+                                       
+
+                                            <button class="btn" name="eventbtn">REGISTER</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
