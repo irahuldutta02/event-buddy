@@ -59,64 +59,45 @@ include "db_conn.php";
             </div>
         </div>
 
-
-
-
-
         <!-- events-section -->
         <div id="events-section">
             <div class="content">
-
                 <div id="events-section-heading">
                     <h3>Register for Upcoming Events</h3>
                 </div>
-
                 <div class="search-container">
                     <form action="">
                         <input type="text" placeholder="  Search.." name="search">
                     </form>
                 </div>
-
-
-
-
                 <!-- card  -->
                 <div class="card-div row">
                     <?php
-
                     $sql = "SELECT * FROM admins ORDER BY event_sdate";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
                             // $_SESSION['event_id'] = $row['event_id'];
-
                     ?>
-
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);" class="img">
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-detais">
-                                        <h3><?php echo $row["event_name"] ?> </h3>
-                                        <p><span>BY : </span><?php echo $row["organizer"] ?></p>
-                                        <p><span>VENUE : </span><?php echo $row["event_venue"] ?></p>
-                                        <p><span>START DATE : </span>[<?php echo $row['event_sdate']; ?>]</p>
-                                        <p><span>START TIME : </span> [<?php echo $row['event_stime']; ?>] </p>
-                                        <P><span>SLOTS : </span>UNLIMITED</P>
-                                        <a href= "event.php?event_id=<?php echo $row['event_id']?>" class="btn">REGISTER
-
-                                        </a>
-
-
-                                        <!-- <button class="btn" name="eventbtn">REGISTER</button> -->
-                                        </form>
-                                    </div>
-                                </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);"
+                                class="img">
                             </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-detais">
+                                <h3><?php echo $row["event_name"] ?> </h3>
+                                <p><span>BY : </span><?php echo $row["organizer"] ?></p>
+                                <p><span>VENUE : </span><?php echo $row["event_venue"] ?></p>
+                                <p><span>START DATE : </span>[<?php echo $row['event_sdate']; ?>]</p>
+                                <p><span>START TIME : </span> [<?php echo $row['event_stime']; ?>] </p>
+                                <P><span>SLOTS : </span>UNLIMITED</P>
+                                <a href="event.php?event_id=<?php echo $row['event_id']?>" class="btn">REGISTER</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <?php
                         }
@@ -127,11 +108,11 @@ include "db_conn.php";
                 </div>
             </div>
         </div>
-
         <!-- footer  -->
         <footer>
             <div class="footer-content">
-                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i class="bi bi-github"></i></a>
+                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i
+                        class="bi bi-github"></i></a>
                 <p>Copyright © 2022 Event Buddy</p>
             </div>
         </footer>
