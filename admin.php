@@ -22,9 +22,11 @@ include "db_conn.php";
 
     <link rel="icon" type="image/x-icon" href="assets/logo/eb-transperent-logo.png" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
 
@@ -51,7 +53,8 @@ include "db_conn.php";
                 <div class="navbar-nav">
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="logout.php" class="nav-item nav-link active">logout <i class="bi bi-box-arrow-left"></i></a>
+                    <a href="logout.php" class="nav-item nav-link active">logout <i
+                            class="bi bi-box-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -77,13 +80,16 @@ include "db_conn.php";
                         <!-- Wrapper for carousel items -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 1">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    class="d-block w-100" alt="Slide 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 2">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    class="d-block w-100" alt="Slide 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 3">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    class="d-block w-100" alt="Slide 3">
                             </div>
                         </div>
                         <!-- Carousel controls -->
@@ -96,8 +102,10 @@ include "db_conn.php";
                     </div>
                 </div>
 
-                <p class="card-date-time"> <b>Start Date & time :</b> [<?php echo $_SESSION['event_sdate']; ?>] [<?php echo $_SESSION['event_stime']; ?>] </p>
-                <p class="card-date-time"><b>End Date & time :</b> [<?php echo $_SESSION['event_edate']; ?>] [<?php echo $_SESSION['event_etime']; ?>] </p>
+                <p class="card-date-time"> <b>Start Date & time :</b> [<?php echo $_SESSION['event_sdate']; ?>]
+                    [<?php echo $_SESSION['event_stime']; ?>] </p>
+                <p class="card-date-time"><b>End Date & time :</b> [<?php echo $_SESSION['event_edate']; ?>]
+                    [<?php echo $_SESSION['event_etime']; ?>] </p>
                 <p class="card-Venue"><b>Venue :</b> <?php echo $_SESSION['event_venue']; ?></p>
                 <p class="card-event-description-title"><b>Event Description :</b></p>
                 <p class="card-event-description"><?php echo $_SESSION['event_desc']; ?></p>
@@ -116,9 +124,11 @@ include "db_conn.php";
                     Edit Event Details
                 </h1>
 
-                <input type="text" id="event-name" class="form-control" placeholder="Event Name" required="" autofocus="" />
+                <input type="text" id="event-name" class="form-control" placeholder="Event Name" required=""
+                    autofocus="" />
 
-                <input type="text" id="event-organizer" class="form-control" placeholder="Event Organizer" required="" autofocus="" />
+                <input type="text" id="event-organizer" class="form-control" placeholder="Event Organizer" required=""
+                    autofocus="" />
 
                 <label for="event-start-date">Event Start Date :</label>
                 <input type="date" id="event-start-date" class="form-control" required="" autofocus="" />
@@ -135,13 +145,20 @@ include "db_conn.php";
                 <label for="event-description">Event Description :</label>
                 <textarea class="form-control" id="event-description" rows="3">Event Description ...</textarea>
 
-                <input type="text" id="event-venue" class="form-control" placeholder="Event Venue" required="" autofocus="" />
+                <input type="text" id="event-venue" class="form-control" placeholder="Event Venue" required=""
+                    autofocus="" />
 
                 <label for="event-brochure">Event Brochure:</label>
                 <input type="file" id="event-brochure" name="event-brochure">
 
-                <label for="Carousel-image">Carousel image: (3, 1460x620 images)</label>
-                <input type="file" accept="image/*" multiple id="corousel-image" name="corousel-image">
+                <label for="Carousel-image">Carousel image: (1, 1460x620 image) (Cover Image)</label>
+                <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
+
+                <label for="Carousel-image">Carousel image: (2, 1460x620 image)</label>
+                <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
+
+                <label for="Carousel-image">Carousel image: (3, 1460x620 image)</label>
+                <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
 
                 <button class="btn btn-primary btn-block btn-danger" type="reset">
                     <i class="fas fa-eraser"></i> Reset
@@ -303,7 +320,8 @@ include "db_conn.php";
         <!-- footer  -->
         <footer>
             <div class="footer-content">
-                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i class="bi bi-github"></i></a>
+                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i
+                        class="bi bi-github"></i></a>
                 <p>Copyright © 2022 Event Buddy</p>
             </div>
         </footer>
@@ -317,57 +335,59 @@ include "db_conn.php";
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        function toggleplist(e) {
-            e.preventDefault();
-            $("#event-details").toggle();
-            $("#participant-list").toggle();
-        }
+    function toggleplist(e) {
+        e.preventDefault();
+        $("#event-details").toggle();
+        $("#participant-list").toggle();
+    }
 
-        function togglelplist(e) {
-            e.preventDefault();
-            $("#event-details").toggle();
-            $("#live-participant-list").toggle();
-        }
+    function togglelplist(e) {
+        e.preventDefault();
+        $("#event-details").toggle();
+        $("#live-participant-list").toggle();
+    }
 
-        function editevent(e) {
-            e.preventDefault();
-            $("#event-details").toggle();
-            $("#logreg-forms .form-signup").toggle();
-        }
+    function editevent(e) {
+        e.preventDefault();
+        $("#event-details").toggle();
+        $("#logreg-forms .form-signup").toggle();
+    }
 
-        function back1(e) {
-            e.preventDefault();
-            $("#event-details").toggle();
-            $("#logreg-forms .form-signup").toggle();
-        }
+    function back1(e) {
+        e.preventDefault();
+        $("#event-details").toggle();
+        $("#logreg-forms .form-signup").toggle();
+    }
 
-        function back2(e) {
-            e.preventDefault();
-            $("#event-details").toggle();
-            $("#participant-list").toggle();
-        }
+    function back2(e) {
+        e.preventDefault();
+        $("#event-details").toggle();
+        $("#participant-list").toggle();
+    }
 
-        function back3(e) {
-            e.preventDefault();
-            $("#event-details").toggle();
-            $("#live-participant-list").toggle();
-        }
+    function back3(e) {
+        e.preventDefault();
+        $("#event-details").toggle();
+        $("#live-participant-list").toggle();
+    }
 
-        $(() => {
-            // Login Register Form
-            $("#p-list-btn").click(toggleplist);
-            $("#l-p-list-btn").click(togglelplist);
-            $("#edit-event").click(editevent);
-            $("#back-1").click(back1);
-            $("#back-2").click(back2);
-            $("#back-3").click(back3);
+    $(() => {
+        // Login Register Form
+        $("#p-list-btn").click(toggleplist);
+        $("#l-p-list-btn").click(togglelplist);
+        $("#edit-event").click(editevent);
+        $("#back-1").click(back1);
+        $("#back-2").click(back2);
+        $("#back-3").click(back3);
 
-        });
+    });
     </script>
 </body>
 

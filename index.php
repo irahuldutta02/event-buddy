@@ -124,45 +124,6 @@ include "db_conn.php";
                         echo "0 results";
                     }
                     ?>
-
-
-                    <!-- <div class="card">
-                        <div class="card-header">
-                            <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);"
-                                class="img">
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-detais">
-                                <h3>EVENT NAME</h3>
-                                <p><span>BY : </span>MAKAUT</p>
-                                <p><span>VENUE : </span>MAKAUT GROUND</p>
-                                <p><span>START DATE : </span>20/12/2022</p>
-                                <p><span>START TIME : </span>10:00 am</p>
-                                <P><span>SLOTS : </span>UNLIMITED</P>
-                                <a href="#" class="btn">REGISTER</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);"
-                                class="img">
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-detais">
-                                <h3>EVENT NAME</h3>
-                                <p><span>BY : </span>MAKAUT</p>
-                                <p><span>VENUE : </span>MAKAUT GROUND</p>
-                                <p><span>START DATE : </span>20/12/2022</p>
-                                <p><span>START TIME : </span>10:00 am</p>
-                                <P><span>SLOTS : </span>UNLIMITED</P>
-                                <a href="#" class="btn">REGISTER</a>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

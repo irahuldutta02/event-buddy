@@ -260,10 +260,16 @@ include "db_conn.php";
 
             <input type="password" id="user-repeatpass" class="form-control" name="a_password" required="" placeholder="Repeat Password" autofocus="" />
 
-            <label for="event-brochure">Event Brochure:(pdf file under 40mb)</label>
+            <label for="event-brochure">Event Brochure: (pdf file under 40mb)</label>
             <input type="file" accept="application/pdf" id="event-brochure" name="event_broc">
 
-            <label for="Carousel-image">Carousel image: (3, 1460x620 images)</label>
+            <label for="Carousel-image">Carousel image: (1, 1460x620 image) (Cover Image)</label>
+            <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
+
+            <label for="Carousel-image">Carousel image: (2, 1460x620 image)</label>
+            <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
+
+            <label for="Carousel-image">Carousel image: (3, 1460x620 image)</label>
             <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
 
             <button class="btn btn-primary btn-block btn-danger" type="reset">
