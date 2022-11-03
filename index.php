@@ -89,7 +89,7 @@ include "db_conn.php";
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
-                            // $_POST['events_id'] = $row['event_id'];
+                            // $_SESSION['event_id'] = $row['event_id'];
 
                     ?>
 
