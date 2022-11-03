@@ -1,0 +1,8 @@
+1. Create a php page to creat a database.
+    the page should check that the data base with the name event_buddy exsist in the mechine or not if exsist over write it or if not exsist creat one (not done yet)(@lokesh)
+2. coursole image input (3 1 mb png file is allowed) (not done yet)(@lokesh)
+3. brochure input (only one image or pdf is allowed) (not done yet)(@lokesh)
+4. show the coursole (not done yet)(@lokesh)
+5. show the brochure (not done yet)(@lokesh)
+6. forgot password (not done yet)(@lokesh)
+7. save password as hash (not done yet)(@lokesh)
