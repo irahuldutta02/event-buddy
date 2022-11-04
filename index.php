@@ -70,14 +70,11 @@ include "db_conn.php";
                         <input type="text" placeholder="  Search.." name="search">
                     </form>
                 </div>
-
                 <!-- card  -->
                 <div class="card-div row">
 
                     <!-- Fetching Data From DataBase -->
                     <?php
-
-                    //Running sql command
                     $sql = "SELECT * FROM admins ORDER BY event_sdate";
                     $result = $conn->query($sql);
 
@@ -86,11 +83,8 @@ include "db_conn.php";
 
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
-
                             // $_SESSION['event_id'] = $row['event_id'];
                     ?>
-
-                    <!-- Showing Data from DataBase  -->
                     <div class="card">
                         <div class="card-header">
                             <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);"
@@ -105,10 +99,11 @@ include "db_conn.php";
                                 <p><span>START DATE : </span>[<?php echo $row['event_sdate']; ?>]</p>
                                 <p><span>START TIME : </span> [<?php echo $row['event_stime']; ?>] </p>
                                 <P><span>SLOTS : </span>UNLIMITED</P>
-                                <a href="event.php?event_id=<?php echo $row['event_id'] ?>" class="btn">REGISTER </a>
+                                <a href="event.php?event_id=<?php echo $row['event_id']?>" class="btn">REGISTER</a>
                             </div>
                         </div>
                     </div>
+
                     <?php
                         }
                     } else {
@@ -118,7 +113,6 @@ include "db_conn.php";
                 </div>
             </div>
         </div>
-
         <!-- footer  -->
         <footer>
             <div class="footer-content">
