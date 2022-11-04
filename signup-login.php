@@ -294,7 +294,8 @@ include "db_conn.php";
             return $data;
         }
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+        
+            
 
             $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $event_id = substr(str_shuffle($data), 0, 6);
