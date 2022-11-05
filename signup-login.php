@@ -393,11 +393,7 @@ include "db_conn.php";
                 exit();
             } else {
                 $event_broc = test_input($_POST["event_broc"]);
-                // $pdf=$_FILES['pdf']['name'];
-                // $pdf_tem_loc=$_FILES['pdf']['tmp_name'];
-                // $pdf_store="pdf/".$pdf;
-
-                // move_uploaded_file($pdf_tem_loc,$pdf_store);
+               
 
             }
 
@@ -414,23 +410,7 @@ include "db_conn.php";
 
             }
 
-            // //   <br>
-            // echo "admin name :$a_name <br>";
-            // echo "admin mail: $a_mail <br>";
-            // echo "admin password: $a_password <br>";
-            // echo "event name : $event_name <br>";
-            // echo"event start date and time : $event_sdate";
-            // echo"$event_stime <br>";
-            // echo"event end date and time : $event_edate";
-            // echo"$event_etime <br>";
-
-            // echo "event brochure: $event_broc <br>";
-            // echo"event carousel: $event_caro <br>";
-
-            // $filePointer = fopen($_FILES['fileUpload']['tmp_name'], 'r');
-            // $fileData = fread($filePointer, filesize($_FILES['fileUpload']['tmp_name']));
-            // $fileData = addslashes($fileData);
-
+          
             $stmt = $conn->prepare("INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc, event_caro) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("ssssssssssssbb", $event_id, $a_mail, $a_name, $a_password, $event_name, $event_sdate, $event_stime, $event_edate, $event_etime, $event_venue, $organizer, $event_desc, $event_broc, $event_caro);
             $stmt->execute();

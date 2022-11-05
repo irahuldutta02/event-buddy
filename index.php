@@ -41,7 +41,7 @@ include "db_conn.php";
                     <a href="index.php#events-section" class="nav-item active nav-link">Events</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="signup-login.php" class="nav-item active nav-link">Login / Creat an Event</a>
+                    <a href="signup-login.php" class="nav-item active nav-link">Login / Create an Event</a>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ include "db_conn.php";
             <div class="home-heading-content">
                 <h1>Welcome to Event Buddy</h1>
                 <p class="lead">Manage your events smartly<p>
-                    <a href="signup-login.php" type="button" class="btn btn-primary btn-lg">Login / Creat an Event</a>
+                    <a href="signup-login.php" type="button" class="btn btn-primary btn-lg">Login / Create an Event</a>
                     <a href="#events-section" type="button" class="btn btn-primary btn-lg">Register for Event</a>
                 </p>
             </div>
