@@ -293,7 +293,9 @@ include "db_conn.php";
             $data = htmlspecialchars($data);
             return $data;
         }
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") 
+        // if(isset($_POST["submit"]))
+        {
         
             
 
@@ -414,8 +416,12 @@ include "db_conn.php";
             $stmt = $conn->prepare("INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc, event_caro) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("ssssssssssssbb", $event_id, $a_mail, $a_name, $a_password, $event_name, $event_sdate, $event_stime, $event_edate, $event_etime, $event_venue, $organizer, $event_desc, $event_broc, $event_caro);
             $stmt->execute();
+
             echo "New records created successfully";
             $stmt->close();
+            // header("Location:index.php");
+
+            // exit();
         }
 
 
