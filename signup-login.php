@@ -342,14 +342,14 @@ include "db_conn.php";
                 if ($stmt) {
        
                      ?><script>
-                        alert("");
+                        alert("Event Created");
                         window.location.href = "index.php";
                      </script><?php
         
                 }
             } else {
                 ?> 
-                <script>alert("data not saved sorry")</script>
+                <script>alert("Error in creating event")</script>
                 <?php
             }
         }
