@@ -131,7 +131,6 @@ include "db_conn.php";
             if (empty($event_id)) {
                 // header("Location: signup-login.php?error=event id is required");
                 exit();
-
             } elseif (empty($a_mail)) {
                 exit();
             } elseif (empty($a_password)) {
@@ -221,7 +220,8 @@ include "db_conn.php";
 
 
         <!-- signup form  -->
-        <form method="post" class="form-signup ">
+        
+        <form action="signup-login.php" method="post" class="form-signup" enctype="multipart/form-data" >
 
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
                 Create New Event
@@ -261,22 +261,22 @@ include "db_conn.php";
             <input type="password" id="user-repeatpass" class="form-control" name="a_password" required="" placeholder="Repeat Password" autofocus="" />
 
             <label for="event-brochure">Event Brochure: (pdf file under 40mb)</label>
-            <input type="file" accept="application/pdf" id="event-brochure" name="event_broc">
+            <input type="file"  id="event-brochure" name="event_broc" value="">
 
             <label for="Carousel-image">Carousel image: (1, 1460x620 image) (Cover Image)</label>
-            <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
+            <input type="file"  multiple id="corousel-image" name="event_caro" multiple>
 
             <label for="Carousel-image">Carousel image: (2, 1460x620 image)</label>
-            <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
+            <input type="file"  multiple id="corousel-image" name="event_caro" multiple>
 
             <label for="Carousel-image">Carousel image: (3, 1460x620 image)</label>
-            <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro" multiple>
+            <input type="file"  multiple id="corousel-image" name="event_caro" multiple>
 
             <button class="btn btn-primary btn-block btn-danger" type="reset">
                 <i class="fas fa-eraser"></i> Reset
             </button>
 
-            <button class="btn btn-primary btn-block" type="submit">
+            <button class="btn btn-primary btn-block" type="submit" name="submit">
                 <i class="fas fa-user-plus"></i> Create Event
             </button>
 
@@ -293,136 +293,78 @@ include "db_conn.php";
             $data = htmlspecialchars($data);
             return $data;
         }
-        if ($_SERVER["REQUEST_METHOD"] == "POST") 
-        // if(isset($_POST["submit"]))
-        {
-        
-            
-
+        if (isset($_POST['submit'])) {
             $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $event_id = substr(str_shuffle($data), 0, 6);
-          
-            //admin name
-            if (empty($_POST["a_name"])) {
-                exit();
-            } else {
-                $a_name = test_input($_POST["a_name"]);
-                // $_SESSION["a_name"] = $a_name;
-                // check if name only contains letters and whitespace
-                if (!preg_match("/^[a-zA-Z-' ]*$/", $a_name)) {
-                    $a_nameErr = "Only letters and white space allowed";
+
+            if (!empty($_POST['event_name']) && !empty($_POST['organizer']) && !empty($_POST['event_sdate']) && !empty($_POST['event_stime']) && !empty($_POST['event_edate']) && !empty($_POST['event_etime']) && !empty($_POST['event_desc']) && !empty($_POST['event_venue']) && !empty($_POST['a_name']) && !empty($_POST['a_mail']) && !empty($_POST['a_password'])) {
+
+                $event_name = test_input($_POST['event_name']);
+                $organizer = test_input($_POST['organizer']);
+                $event_sdate = test_input($_POST['event_sdate']);
+                $event_stime = test_input($_POST['event_stime']);
+                $event_edate = test_input($_POST['event_edate']);
+                $event_etime = test_input($_POST['event_etime']);
+                $event_desc = test_input($_POST['event_desc']);
+                $event_venue = test_input($_POST['event_venue']);
+                $a_name = test_input($_POST['a_name']);
+                $a_mail = test_input($_POST['a_mail']);
+                $a_password = test_input($_POST['a_password']);
+                // $event_broc = $_POST['event_broc'];
+
+                $pdf=$_FILES['event_broc']['name'];
+
+                $pdf_type = $_FILES['event_broc']['type'];
+
+                $pdf_size=$_FILES['event_broc']['size'];
+
+                $pdf_temp_loc = $_FILES['event_broc']['tmp_name'];
+
+                $pdf_store="pdf/".$pdf;
+
+                move_uploaded_file($pdf_temp_loc, $pdf_store);
+
+
+
+
+                // $event_caro= $_POST['event_caro'];
+
+
+                
+                // $sql ="INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc)VALUES('$event_id','$a_mail','$a_name', '$a_password', '$event_name', '$event_sdate', '$event_stime', '$event_edate', '$event_etime', '$event_venue', '$organizer', '$event_desc', '$pdf')";
+                // $query = mysqli_query($conn,$sql);
+
+                $stmt = $conn->prepare("INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("sssssssssssss", $event_id, $a_mail, $a_name, $a_password, $event_name, $event_sdate, $event_stime, $event_edate, $event_etime, $event_venue, $organizer, $event_desc, $pdf);
+                $stmt->execute();
+                $stmt->close();
+
+                if ($stmt) {
+       
+                     ?><script>
+                        alert("");
+                        window.location.href = "index.php";
+                     </script><?php
+        
                 }
-            }
-
-            //admin mail
-            if (empty($_POST["a_mail"])) {
-                exit();
             } else {
-                $a_mail = test_input($_POST["a_mail"]);
-                // $_SESSION["a_mail"] = $a_mail;
-                // check if e-mail address is well-formed
-                if (!filter_var($a_mail, FILTER_VALIDATE_EMAIL)) {
-                    $a_mailErr = "Invalid email format";
-                }
+                ?> 
+                <script>alert("data not saved sorry")</script>
+                <?php
             }
-
-            // admin password
-            if (empty($_POST["a_password"])) {
-                exit();
-            } else {
-                $a_password = test_input($_POST["a_password"]);
-                //   $_SESSION["event_id"]= $event_id;
-
-            }
-            //event name
-            if (empty($_POST["event_name"])) {
-                exit();
-            } else {
-                $event_name = test_input($_POST["event_name"]);
-                // $_SESSION["event_name"] = $event_name;
-                if (!preg_match("/^[a-zA-Z-' ]*$/", $event_name)) {
-                    $event_nameErr = "Only letters and white space allowed";
-                }
-
-                //event start date
-                if (empty($_POST["event_sdate"])) {
-                    exit();
-                } else {
-                    $event_sdate = test_input($_POST["event_sdate"]);
-                }
-                //event start time
-                if (empty($_POST["event_stime"])) {
-                    exit();
-                } else {
-                    $event_stime = test_input($_POST["event_stime"]);
-                }
-                //event end date
-                if (empty($_POST["event_edate"])) {
-                    exit();
-                } else
-                    $event_edate = test_input($_POST["event_edate"]);
-            }
-            //event end time
-            if (empty($_POST["event_etime"])) {
-                exit();
-            } else {
-                $event_etime = test_input($_POST["event_etime"]);
-            }
-
-            //event venue
-            if (empty($_POST["event_venue"])) {
-                exit();
-            } else {
-                $event_venue = test_input($_POST["event_venue"]);
-            }
-
-
-            //event organizer
-            if (empty($_POST["organizer"])) {
-                exit();
-            } else {
-                $organizer = test_input($_POST["organizer"]);
-            }
-            //event description
-            if (empty($_POST["event_desc"])) {
-                exit();
-            } else {
-                $event_desc = test_input($_POST["event_desc"]);
-            }
-
-            //event brochure
-            if (empty($_POST["event_broc"])) {
-                exit();
-            } else {
-                $event_broc = test_input($_POST["event_broc"]);
-               
-
-            }
-
-
-            //event carousel
-            if (empty($_POST["event_caro"])) {
-                exit();
-            } else {
-                // $image=$_FILES['event_caro']['name'];
-                // $path='images/'.$image;
-
-                $event_caro = test_input($_POST["event_broc"]);
-                // $_SESSION["event_id"]= $event_id;
-
-            }
-
-          
-            $stmt = $conn->prepare("INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc, event_caro) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssssssssssbb", $event_id, $a_mail, $a_name, $a_password, $event_name, $event_sdate, $event_stime, $event_edate, $event_etime, $event_venue, $organizer, $event_desc, $event_broc, $event_caro);
-            $stmt->execute();
-
-            echo "New records created successfully";
-            $stmt->close();
-            // header("Location:index.php");
-
-            // exit();
         }
+
+
+
+
+
+
+
+
+        // header("Location:index.php");
+
+        // exit();
+
 
 
         ?>
