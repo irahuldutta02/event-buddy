@@ -342,7 +342,7 @@ include "db_conn.php";
                 if ($stmt) {
        
                      ?><script>
-                        alert("Got you ");
+                        alert("");
                         window.location.href = "index.php";
                      </script><?php
         
