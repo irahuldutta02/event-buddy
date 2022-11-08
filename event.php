@@ -126,7 +126,7 @@ if ($result->num_rows > 0) {
                 <p class="card-Venue"><b>Venue :</b> <?php   echo $row['event_venue'];?></p>
                 <p class="card-event-description-title"><b>Event Description :</b></p>
                 <p class="card-event-description"><?php   echo $row['event_desc'];?></p>
-                <a href="#" type="button" class="btn btn-primary">Event Brochure</a>
+                <a href="display_broc.php?event_id=<?php echo $row['event_id']?>" type="button" class="btn btn-primary">Event Brochure</a>
 
                 <!-- event-registration-form  -->
                 <form>
