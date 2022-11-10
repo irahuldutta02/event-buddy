@@ -87,7 +87,7 @@ include "db_conn.php";
                     ?>
                     <div class="card">
                         <div class="card-header">
-                            <div style="background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);"
+                            <div style="background-image: url('image/<?php echo $row['c_image1'];?>');"
                                 class="img">
                             </div>
                         </div>

@@ -264,13 +264,13 @@ include "db_conn.php";
             <input type="file"  id="event-brochure" name="event_broc" value="">
 
             <label for="Carousel-image">Carousel image: (1, 1460x620 image) (Cover Image)</label>
-            <input type="file"  multiple id="corousel-image" name="event_caro" multiple>
+            <input type="file"  multiple id="corousel-image" name="c_image1" multiple>
 
             <label for="Carousel-image">Carousel image: (2, 1460x620 image)</label>
-            <input type="file"  multiple id="corousel-image" name="event_caro" multiple>
+            <input type="file"  multiple id="corousel-image" name="c_image2" multiple>
 
             <label for="Carousel-image">Carousel image: (3, 1460x620 image)</label>
-            <input type="file"  multiple id="corousel-image" name="event_caro" multiple>
+            <input type="file"  multiple id="corousel-image" name="c_image3" multiple>
 
             <button class="btn btn-primary btn-block btn-danger" type="reset">
                 <i class="fas fa-eraser"></i> Reset
@@ -327,45 +327,40 @@ include "db_conn.php";
 
                 //Inserting carousel to database
                 $c_img1=$_FILES['c_image1']['name'];
-                $pdf_type = $_FILES['c_image1']['type'];
-                $pdf_size=$_FILES['c_image1']['size'];
-                $pdf_temp_loc = $_FILES['c_image1']['tmp_name'];
-                $pdf_store="image/".$c_img1;
-                move_uploaded_file($pdf_temp_loc, $pdf_store);
+                $c_img1_type = $_FILES['c_image1']['type'];
+                $c_img1_size=$_FILES['c_image1']['size'];
+                $c_img1_temp_loc = $_FILES['c_image1']['tmp_name'];
+                $c_img1_store="image/".$c_img1;
+                move_uploaded_file($c_img1_temp_loc, $c_img1_store);
 
 
 
                 $c_img2=$_FILES['c_image2']['name'];
-                $pdf_type = $_FILES['event_broc']['type'];
-                $pdf_size=$_FILES['event_broc']['size'];
-                $pdf_temp_loc = $_FILES['event_broc']['tmp_name'];
-                $pdf_store="pdf/".$pdf;
-                move_uploaded_file($pdf_temp_loc, $pdf_store);
+                $c_img2_type = $_FILES['c_image2']['type'];
+                $c_img2_size=$_FILES['c_image2']['size'];
+                $c_img2_temp_loc = $_FILES['c_image2']['tmp_name'];
+                $c_img2_store="image/".$c_img2;
+                move_uploaded_file($c_img2_temp_loc, $c_img2_store);
 
 
 
 
                 $c_img3=$_FILES['c_image3']['name'];
+                $c_img3_type = $_FILES['c_image3']['type'];
+                $c_img3_size=$_FILES['c_image3']['size'];
+                $c_img3_temp_loc = $_FILES['c_image3']['tmp_name'];
+                $c_img3_store="image/".$c_img3;
+                move_uploaded_file($c_img3_temp_loc, $c_img3_store);
 
-                $pdf_type = $_FILES['event_broc']['type'];
-
-                $pdf_size=$_FILES['event_broc']['size'];
-
-                $pdf_temp_loc = $_FILES['event_broc']['tmp_name'];
-
-                $pdf_store="pdf/".$pdf;
-
-                move_uploaded_file($pdf_temp_loc, $pdf_store);
-
-                // $event_caro= $_POST['event_caro'];
+              
 
 
                 
                 // $sql ="INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc)VALUES('$event_id','$a_mail','$a_name', '$a_password', '$event_name', '$event_sdate', '$event_stime', '$event_edate', '$event_etime', '$event_venue', '$organizer', '$event_desc', '$pdf')";
                 // $query = mysqli_query($conn,$sql);
 
-                $stmt = $conn->prepare("INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("sssssssssssss", $event_id, $a_mail, $a_name, $a_password, $event_name, $event_sdate, $event_stime, $event_edate, $event_etime, $event_venue, $organizer, $event_desc, $pdf);
+                $stmt = $conn->prepare("INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc, c_image1, c_image2, c_image3) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("ssssssssssssssss", $event_id, $a_mail, $a_name, $a_password, $event_name, $event_sdate, $event_stime, $event_edate, $event_etime, $event_venue, $organizer, $event_desc, $pdf, $c_img1, $c_img2, $c_img3);
                 $stmt->execute();
                 $stmt->close();
 

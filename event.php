@@ -9,7 +9,7 @@ include "db_conn.php";
 $event_id = $_GET['event_id'];
 // $events_id =$_POST['events_id'];
 
-$sql = "SELECT event_id,event_name, organizer, event_sdate, event_stime, event_edate, event_etime, event_venue, event_desc, event_broc  FROM admins WHERE event_id='{$event_id}'";
+$sql = "SELECT event_id,event_name, organizer, event_sdate, event_stime, event_edate, event_etime, event_venue, event_desc, event_broc, c_image1, c_image2, c_image3  FROM admins WHERE event_id='{$event_id}'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -101,13 +101,13 @@ if ($result->num_rows > 0) {
                                 <!-- Wrapper for carousel items -->
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 1">
+                                        <img src="image/<?php echo $row['c_image1'];?>" class="d-block w-100" alt="Slide 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 2">
+                                        <img src="image/<?php echo $row['c_image2'];?>" class="d-block w-100" alt="Slide 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 3">
+                                        <img src="image/<?php echo $row['c_image3'];?>" class="d-block w-100" alt="Slide 3">
                                     </div>
                                 </div>
 
@@ -126,9 +126,11 @@ if ($result->num_rows > 0) {
                         <p class="card-Venue"><b>Venue :</b> <?php echo $row['event_venue']; ?></p>
                         <p class="card-event-description-title"><b>Event Description :</b></p>
                         <p class="card-event-description"><?php echo $row['event_desc']; ?></p>
-                        <!-- <a href="display_broc.php?event_id=<?php echo $row['event_id'] ?>" type="button" class="btn btn-primary">Event Brochure</a> -->
-                        <a target="_blank" href="pdf/<?php echo $_SESSION['event_broc'];?>" type="button" class="btn btn-primary">Event Brochure</a>
+                      
+                       
+                        <a target="_blank" href="pdf/<?php echo $row['event_broc'];?>" type="button" class="btn btn-primary">Event Brochure</a>
 
+                       
                         <!-- event-registration-form  -->
                         <span id="Message"></span>
 
