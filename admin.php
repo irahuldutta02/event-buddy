@@ -113,7 +113,8 @@ include "db_conn.php";
                 $event_id =  $_SESSION['event_id'];
                 // echo $event_id;
                 ?>
-                <a href="display_broc.php?event_id=<?php echo $event_id?>" type="button" class="btn btn-primary">Event Brochure</a>
+                <!-- <a href="display_broc.php?event_id=<?php echo $event_id?>" type="button" class="btn btn-primary">Event Brochure</a> -->
+                <a target="_blank" href="pdf/<?php echo $_SESSION['event_broc'];?>" type="button" class="btn btn-primary">Event Brochure</a>
 
                 <a href="#" id="edit-event" type="button" class="btn btn-primary">Edit Event Details</a>
                 <a href="#" id="p-list-btn" type="button" class="btn btn-primary">Participant List</a>
