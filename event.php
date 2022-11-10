@@ -126,7 +126,8 @@ if ($result->num_rows > 0) {
                         <p class="card-Venue"><b>Venue :</b> <?php echo $row['event_venue']; ?></p>
                         <p class="card-event-description-title"><b>Event Description :</b></p>
                         <p class="card-event-description"><?php echo $row['event_desc']; ?></p>
-                        <a href="display_broc.php?event_id=<?php echo $row['event_id'] ?>" type="button" class="btn btn-primary">Event Brochure</a>
+                        <!-- <a href="display_broc.php?event_id=<?php echo $row['event_id'] ?>" type="button" class="btn btn-primary">Event Brochure</a> -->
+                        <a target="_blank" href="pdf/<?php echo $_SESSION['event_broc'];?>" type="button" class="btn btn-primary">Event Brochure</a>
 
                         <!-- event-registration-form  -->
                         <span id="Message"></span>
@@ -176,13 +177,13 @@ if ($result->num_rows > 0) {
                                 $stmt->close();
                                 if($stmt){
                                     ?><script>
-                                        alert("Event Created");
+                                        alert("Registered for the event");
                                         window.location.href = "index.php";
                                         </script><?php
                                 }
                                 else{
                                     ?><script>
-                                    alert("Error in creating Event sorry");
+                                    alert("Error try again");
                                     window.location.href = "index.php";
                                     </script><?php
                                 }

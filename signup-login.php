@@ -312,6 +312,7 @@ include "db_conn.php";
                 $a_password = test_input($_POST['a_password']);
                 // $event_broc = $_POST['event_broc'];
 
+                //Inserting Event Brochure to database 
                 $pdf=$_FILES['event_broc']['name'];
 
                 $pdf_type = $_FILES['event_broc']['type'];
@@ -324,7 +325,7 @@ include "db_conn.php";
 
                 move_uploaded_file($pdf_temp_loc, $pdf_store);
 
-
+                //Inserting carousel to database
 
 
                 // $event_caro= $_POST['event_caro'];
