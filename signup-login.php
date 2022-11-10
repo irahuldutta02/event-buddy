@@ -327,8 +327,25 @@ include "db_conn.php";
 
                 //Inserting carousel to database
                 $c_img1=$_FILES['c_image1']['name'];
+                $pdf_type = $_FILES['c_image1']['type'];
+                $pdf_size=$_FILES['c_image1']['size'];
+                $pdf_temp_loc = $_FILES['c_image1']['tmp_name'];
+                $pdf_store="image/".$c_img1;
+                move_uploaded_file($pdf_temp_loc, $pdf_store);
+
+
+
                 $c_img2=$_FILES['c_image2']['name'];
-                $c_img2=$_FILES['c_image2']['name'];
+                $pdf_type = $_FILES['event_broc']['type'];
+                $pdf_size=$_FILES['event_broc']['size'];
+                $pdf_temp_loc = $_FILES['event_broc']['tmp_name'];
+                $pdf_store="pdf/".$pdf;
+                move_uploaded_file($pdf_temp_loc, $pdf_store);
+
+
+
+
+                $c_img3=$_FILES['c_image3']['name'];
 
                 $pdf_type = $_FILES['event_broc']['type'];
 
