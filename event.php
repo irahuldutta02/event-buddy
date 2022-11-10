@@ -129,7 +129,10 @@ if ($result->num_rows > 0) {
                         <a href="display_broc.php?event_id=<?php echo $row['event_id'] ?>" type="button" class="btn btn-primary">Event Brochure</a>
 
                         <!-- event-registration-form  -->
-                        <form action="event.php" method="POST">
+                        <span id="Message"></span>
+
+
+                        <form  action="event.php?event_id=<?php echo $event_id?>" method="POST">
                             <div class="modal-header">
                                 <h5 class="modal-title">Register for the Event</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -137,25 +140,56 @@ if ($result->num_rows > 0) {
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" name="p_name">
+                                    <input type="text" id="p_name" class="form-control form_data" name="p_name">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email:</label>
-                                    <input type="email" class="form-control" name="p_email">
+                                    <input type="email" id="p_email" class="form-control form_data" name="p_email">
                                 </div>
-                                <div class="mb-3">
-                                  
-                                    <label class="form-label">Event Id:</label>
-                                    <input type="text" class="form-control" name="event_id" value=""readonly>
-                                </div>
+
+                               
 
                             </div>
                             <div class="modal-footer">
                                 <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Register</button>
+                                <button type="submit" id="submit" name="submit" class="btn btn-primary">Register</button>
                             </div>
                         </form>
                      
+                        <!-- inserting data to database -->
+                        <?php 
+                         function test_input($data)
+                         {
+                             $data = trim($data);
+                             $data = stripslashes($data);
+                             $data = htmlspecialchars($data);
+                             return $data;
+                         }
+                        
+                        if(isset($_POST['submit'])){
+                            if(!empty($_POST['p_name']) && !empty($_POST['p_email'])){
+                                $p_name = test_input($_POST['p_name']);
+                                $p_email = test_input($_POST['p_email']);
+                                $stmt = $conn->prepare("INSERT INTO participants (p_email, event_id, p_name) VALUES(?, ?, ?)");
+                                $stmt->bind_param("sss", $p_email, $event_id, $p_name);
+                                $stmt->execute();
+                                $stmt->close();
+                                if($stmt){
+                                    ?><script>
+                                        alert("Event Created");
+                                        window.location.href = "index.php";
+                                        </script><?php
+                                }
+                                else{
+                                    ?><script>
+                                    alert("Error in creating Event sorry");
+                                    window.location.href = "index.php";
+                                    </script><?php
+                                }
+                            }
+                        }
+                          
+                        ?>
                     </div>
 
                 </div>
@@ -172,6 +206,8 @@ if ($result->num_rows > 0) {
         </body>
 
 </html>
+
+
 
 
 <?php

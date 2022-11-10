@@ -109,7 +109,12 @@ include "db_conn.php";
                 <p class="card-Venue"><b>Venue :</b> <?php echo $_SESSION['event_venue']; ?></p>
                 <p class="card-event-description-title"><b>Event Description :</b></p>
                 <p class="card-event-description"><?php echo $_SESSION['event_desc']; ?></p>
-                <a href="#" type="button" class="btn btn-primary">Event Brochure</a>
+                <?php 
+                $event_id =  $_SESSION['event_id'];
+                // echo $event_id;
+                ?>
+                <a href="display_broc.php?event_id=<?php echo $event_id?>" type="button" class="btn btn-primary">Event Brochure</a>
+
                 <a href="#" id="edit-event" type="button" class="btn btn-primary">Edit Event Details</a>
                 <a href="#" id="p-list-btn" type="button" class="btn btn-primary">Participant List</a>
                 <a href="#" id="l-p-list-btn" type="button" class="btn btn-primary">Live Participant List</a>
