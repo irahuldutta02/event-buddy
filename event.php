@@ -143,11 +143,11 @@ if ($result->num_rows > 0) {
                                     <label class="form-label">Email:</label>
                                     <input type="email" class="form-control" name="p_email">
                                 </div>
-                                <!-- <div class="mb-3">
+                                <div class="mb-3">
                                   
                                     <label class="form-label">Event Id:</label>
                                     <input type="text" class="form-control" name="event_id" value=""readonly>
-                                </div> -->
+                                </div>
 
                             </div>
                             <div class="modal-footer">
