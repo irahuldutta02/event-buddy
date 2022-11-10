@@ -129,7 +129,7 @@ if ($result->num_rows > 0) {
                         <a href="display_broc.php?event_id=<?php echo $row['event_id'] ?>" type="button" class="btn btn-primary">Event Brochure</a>
 
                         <!-- event-registration-form  -->
-                        <form action="event.php?event_id=<?php echo $_GET['event_id'] ?>" method="POST">
+                        <form action="event.php" method="POST">
                             <div class="modal-header">
                                 <h5 class="modal-title">Register for the Event</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -155,64 +155,7 @@ if ($result->num_rows > 0) {
                                 <button type="submit" class="btn btn-primary">Register</button>
                             </div>
                         </form>
-                        <?php
-
-                        function test_input($data)
-                        {
-                            $data = trim($data);
-                            $data = stripslashes($data);
-                            $data = htmlspecialchars($data);
-                            return $data;
-                        }
-
-                        if (isset($_POST['submit'])) {
-                            if (!empty($_POST['p_name']) && !empty($_POST['p_email'])) {
-                                $p_name = test_input($_POST['p_name']);
-                                $p_email = test_input($_POST['p_email']);
-                                $events_id = $_GET['event_id'];
-
-                                $stmt = $conn->prepare("INSERT INTO participants(p_email, p_name, event_id) VALUES(?, ?, ?)");
-                                $stmt->bind_param("sss", $p_email, $p_name, $events_id);
-                                $stmt->execute();
-                                $stmt->close();
-
-                                if ($stmt) {
-                        ?>
-                                    <script>
-                                        alert(" Registering event !!!")
-                                    </script>
-                                <?php
-                                } else {
-                                ?>
-                                    <script>
-                                        alert("Error in Registering event !!!")
-                                    </script>
-                                <?php
-                                }
-                            } else {
-                                ?>
-                                <script>
-                                    alert("hey")
-                                </script>
-                        <?php
-                            }
-                        } else {
-                            
-                        }
-
-
-
-
-
-
-
-
-
-
-
-                        ?>
-
-
+                     
                     </div>
 
                 </div>
