@@ -189,6 +189,13 @@ if ($result->num_rows > 0) {
                                 }
                             }
                         }
+                        else{
+                            ?>
+                            <script>
+                                 alert("Enter all data");
+                                window.location.href = "index.php";
+                            </script> <?php
+                        }
                           
                         ?>
                     </div>
