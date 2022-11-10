@@ -155,6 +155,9 @@ include "db_conn.php";
                         $_SESSION["organizer"] = $row["organizer"];
                         $_SESSION["event_desc"] = $row["event_desc"];
                         $_SESSION["event_broc"] = $row["event_broc"];
+                        $_SESSION["c_image1"] = $row["c_image1"];
+                        $_SESSION["c_image2"] = $row["c_image2"];
+                        $_SESSION["c_image3"] = $row["c_image3"];
 
 
 

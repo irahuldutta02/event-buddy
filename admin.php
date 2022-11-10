@@ -79,19 +79,30 @@ include "db_conn.php";
                         </ol>
                         <!-- Wrapper for carousel items -->
                         <div class="carousel-inner">
+                          
+                        <?php 
+                        
+                        $event_id =  $_SESSION['event_id'];
+                        $sql = "SELECT * FROM admins WHERE event_id ='$event_id'";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                        ?>
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                <img src="image/<?php echo $row['c_image1']?>"
                                     class="d-block w-100" alt="Slide 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                <img src="image/<?php echo $row['c_image2']?>"
                                     class="d-block w-100" alt="Slide 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                <img src="image/<?php echo $row['c_image3']?>"
                                     class="d-block w-100" alt="Slide 3">
                             </div>
                         </div>
+
+
                         <!-- Carousel controls -->
                         <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
@@ -101,6 +112,13 @@ include "db_conn.php";
                         </a>
                     </div>
                 </div>
+                <?php
+
+    }
+} else {
+    echo "0 results";
+}
+?>
 
                 <p class="card-date-time"> <b>Start Date & time :</b> [<?php echo $_SESSION['event_sdate']; ?>]
                     [<?php echo $_SESSION['event_stime']; ?>] </p>
@@ -109,11 +127,8 @@ include "db_conn.php";
                 <p class="card-Venue"><b>Venue :</b> <?php echo $_SESSION['event_venue']; ?></p>
                 <p class="card-event-description-title"><b>Event Description :</b></p>
                 <p class="card-event-description"><?php echo $_SESSION['event_desc']; ?></p>
-                <?php 
-                $event_id =  $_SESSION['event_id'];
-                // echo $event_id;
-                ?>
-                <!-- <a href="display_broc.php?event_id=<?php echo $event_id?>" type="button" class="btn btn-primary">Event Brochure</a> -->
+               
+               
                 <a target="_blank" href="pdf/<?php echo $_SESSION['event_broc'];?>" type="button" class="btn btn-primary">Event Brochure</a>
 
                 <a href="#" id="edit-event" type="button" class="btn btn-primary">Edit Event Details</a>
